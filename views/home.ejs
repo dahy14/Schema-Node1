@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="app">
+      <span id="time" class="time"> 9:30 </span>
+      <span id="day" class=""> sunday</span>
+      <br />
+      <div class="avialability" style="display: flex; flex-direction: column">
+        <label
+          >Monday
+          <button class="avail-btn" name="mon" id="monday">
+            not available
+          </button></label
+        >
+        <label
+          >Tuesday
+          <button class="avail-btn" name="tue" id="tuesday">
+            not available
+          </button></label
+        >
+        <label
+          >Wednesday
+          <button class="avail-btn" name="wed" id="wednesday">
+            not available
+          </button></label
+        >
+        <label
+          >Thursday
+          <button class="avail-btn" name="thu" id="thursday">
+            not available
+          </button></label
+        >
+        <label
+          >Friday
+          <button class="avail-btn" name="fri" id="friday">
+            not available
+          </button></label
+        >
+        <label
+          >Saturday
+          <button class="avail-btn" name="sat" id="saturday">
+            not available
+          </button></label
+        >
+        <label
+          >Sunday
+          <button class="avail-btn" name="sun" id="sunday">
+            not available
+          </button></label
+        >
+      </div>
+      <button class="save">Save Sched</button>
+      <button class="export">export in pdf</button>
+
+      <div class="prev-week"><%= data.week1.monday %></div>
+    </div>
+
+    <script>
+      // sets the availability for the week
+      const days = document.querySelectorAll(".avail-btn");
+      days.forEach((day) => {
+        day.addEventListener("click", () => {
+          if (day.innerText === "not available") {
+            day.innerText = "available";
+          } else {
+            day.innerText = "not available";
+          }
+        });
+      });
+
+      // save sched
+      const save = document.querySelector(".save");
+
+      // export in pdf
+    </script>
+  </body>
+</html>
