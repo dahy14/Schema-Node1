@@ -58,26 +58,25 @@
       <button class="save">Save Sched</button>
       <button class="export">export in pdf</button>
 
-      <div class="prev-week"><%= data.week1.monday %></div>
+      <div class="prev-week">
+        previous week sched <br />
+        <div>
+          <%data.forEach((week) => { %>
+
+          <span> <%=week[0]%> </span> <span> <%=week[1]%> </span> <br />
+          <div>
+            <% new_week = week.slice(2); new_week.forEach((day) => { %>
+            <span> <%=day%> </span>
+            <% })%>
+          </div>
+          <% })%>
+        </div>
+        <div></div>
+      </div>
     </div>
 
-    <script>
-      // sets the availability for the week
-      const days = document.querySelectorAll(".avail-btn");
-      days.forEach((day) => {
-        day.addEventListener("click", () => {
-          if (day.innerText === "not available") {
-            day.innerText = "available";
-          } else {
-            day.innerText = "not available";
-          }
-        });
-      });
-
-      // save sched
-      const save = document.querySelector(".save");
-
-      // export in pdf
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+    <script src="../src/avail.js"></script>
+    <script src="../src/save.js"></script>
   </body>
 </html>
