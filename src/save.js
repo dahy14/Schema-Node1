@@ -23,10 +23,13 @@ save.addEventListener("click", () => {
   });
   fetch(url).then((res) => {
     res.json().then((data) => {
-      if (data[data.length - 1][0] !== monday) {
+      if (data[data.length - 1][0] === monday) {
+        data.pop();
         data.push(dataToPush);
         vdata = data;
       } else {
+        data.push(dataToPush);
+        vdata = data;
       }
     });
   });
