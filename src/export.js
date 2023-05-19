@@ -24,10 +24,7 @@ const export_btn = document.querySelector(".export");
 // });
 
 export_btn.addEventListener("click", async (e) => {
-  console.log("click from export");
   e.preventDefault();
-  const element = await document.getElementById("availability"); //id for content area
-
-  console.log(element);
+  const element = await document.querySelector(".availability"); //id for content area
   html2pdf().from(element).set(options).save();
 });
