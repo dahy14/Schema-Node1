@@ -13,47 +13,47 @@
       <span id="date_now" class=""> May 14, 2023</span>
       <br />
       <div class="availability" style="display: flex; flex-direction: column">
-        <label
+        <span
           >Monday
           <button class="avail-btn" name="mon" id="monday">
-            not available
-          </button></label
+            available
+          </button></span
         >
-        <label
+        <span
           >Tuesday
           <button class="avail-btn" name="tue" id="tuesday">
-            not available
-          </button></label
+            available
+          </button></span
         >
-        <label
+        <span
           >Wednesday
           <button class="avail-btn" name="wed" id="wednesday">
-            not available
-          </button></label
+            available
+          </button></span
         >
-        <label
+        <span
           >Thursday
           <button class="avail-btn" name="thu" id="thursday">
-            not available
-          </button></label
+            available
+          </button></span
         >
-        <label
+        <span
           >Friday
           <button class="avail-btn" name="fri" id="friday">
-            not available
-          </button></label
+            available
+          </button></span
         >
-        <label
+        <span
           >Saturday
           <button class="avail-btn" name="sat" id="saturday">
-            not available
-          </button></label
+            available
+          </button></span
         >
-        <label
+        <span
           >Sunday
           <button class="avail-btn" name="sun" id="sunday">
-            not available
-          </button></label
+            available
+          </button></span
         >
       </div>
       <button disabled="false" class="save">Save Sched</button>
@@ -64,7 +64,7 @@
         <div>
           <%data.forEach((week) => { %>
 
-          <span class="firsday"> <%=week[0]%> </span>
+          <span class="firstday"> <%=week[0]%> </span> -
           <span class="lastday"> <%=week[1]%> </span> <br />
           <div>
             <% new_week = week.slice(2); new_week.forEach((day) => { %>
