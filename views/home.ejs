@@ -4,76 +4,101 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Schema Scheduler</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link href="../src/style.css" rel="stylesheet" />
   </head>
   <body>
     <div class="app">
-      <span id="time" class="time"> 9:21 </span>
-      <span id="day_now" class=""> Sunday</span>
-      <span id="date_now" class=""> May 14, 2023</span>
-      <br />
-      <div class="availability" style="display: flex; flex-direction: column">
-        <span
-          >Monday
-          <button class="avail-btn" name="mon" id="monday">
-            available
-          </button></span
-        >
-        <span
-          >Tuesday
-          <button class="avail-btn" name="tue" id="tuesday">
-            available
-          </button></span
-        >
-        <span
-          >Wednesday
-          <button class="avail-btn" name="wed" id="wednesday">
-            available
-          </button></span
-        >
-        <span
-          >Thursday
-          <button class="avail-btn" name="thu" id="thursday">
-            available
-          </button></span
-        >
-        <span
-          >Friday
-          <button class="avail-btn" name="fri" id="friday">
-            available
-          </button></span
-        >
-        <span
-          >Saturday
-          <button class="avail-btn" name="sat" id="saturday">
-            available
-          </button></span
-        >
-        <span
-          >Sunday
-          <button class="avail-btn" name="sun" id="sunday">
-            available
-          </button></span
-        >
-      </div>
-      <button disabled="false" class="save">Save Sched</button>
-      <button class="export">export in pdf</button>
-
-      <div class="prev-week">
-        previous week sched <br />
-        <div>
-          <%data.forEach((week) => { %>
-
-          <span class="firstday"> <%=week[0]%> </span> -
-          <span class="lastday"> <%=week[1]%> </span> <br />
-          <div>
-            <% new_week = week.slice(2); new_week.forEach((day) => { %>
-            <span> <%=day%> </span>
-            <% })%>
+      <div class="container">
+        <div class="header">
+          <div class="day">
+            <span id="date_now" class="day2"> May 14, 2023</span>
+            <span id="day_now" class="day3"> Sunday</span>
           </div>
+          <div class="time">
+            <span id="time" class="">9:21</span>
+            <span id="am-pm" class="">AM</span>
+          </div>
+        </div>
+        <div class="avail-heading">
+          Hi, what is your schedule for this week?
+        </div>
+        <div class="prev-week-heading">My Previous Week Schedule:</div>
+        <div id="availability">
+          <span
+            >Monday
+            <button class="avail-btn green" name="mon" id="monday">
+              <p>available</p>
+              <div class="circle green"></div></button
+          ></span>
+          <span
+            >Tuesday
+            <button class="avail-btn green" name="tue" id="tuesday">
+              <p>available</p>
+              <div class="circle green"></div></button
+          ></span>
+          <span
+            >Wednesday
+            <button class="avail-btn green" name="wed" id="wednesday">
+              <p>available</p>
+              <div class="circle green"></div></button
+          ></span>
+          <span
+            >Thursday
+            <button class="avail-btn green" name="thu" id="thursday">
+              <p>available</p>
+              <div class="circle green"></div></button
+          ></span>
+          <span
+            >Friday
+            <button class="avail-btn green" name="fri" id="friday">
+              <p>available</p>
+              <div class="circle green"></div></button
+          ></span>
+          <span
+            >Saturday
+            <button class="avail-btn green" name="sat" id="saturday">
+              <p>available</p>
+              <div class="circle green"></div></button
+          ></span>
+          <span
+            >Sunday
+            <button class="avail-btn green" name="sun" id="sunday">
+              <p>available</p>
+              <div class="circle green"></div></button
+          ></span>
+        </div>
+        <div id="prev-week">
+          <%data.forEach((week) => { %>
+          <span class="week">
+            <span>
+              <span class="firstday"> <%=week[0]%> </span> -
+              <span class="lastday"> <%=week[1]%> </span>
+            </span>
+
+            <div>
+              <% new_week = week.slice(2); new_week.forEach((data) => { %>
+                <div class="prev-week-data"  data= <%= data%> >
+                   <div class="circle"></div>
+                </div>
+              <% })%>
+            </div>
+          </span>
           <% })%>
         </div>
-        <div></div>
+        <div class="buttons">
+          <button disabled="false" class="save">Save Schedule</button>
+          <button class="export">
+            <i class="fa-solid fa-file-export"></i>Export in PDF
+          </button>
+        </div>
       </div>
     </div>
     <!-- dependencies -->

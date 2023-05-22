@@ -6,6 +6,8 @@ const week_data_filepath = `${__dirname}/data/week-data.json`;
 
 let data = fs.readFileSync(week_data_filepath, "utf-8", (err) => {});
 data = JSON.parse(data);
+// get the last 5 week's data from the array
+data = data.slice(-5);
 
 app.set("view engine", "ejs");
 app.use(express.json());

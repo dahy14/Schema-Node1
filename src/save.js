@@ -13,6 +13,10 @@ const sunday = getDay(now, 7);
 
 let vdata = [];
 
+days.forEach((day) => {
+  console.log(day.innerText);
+});
+
 // append the new week's data to the preview week data
 save.addEventListener("click", () => {
   const dataToPush = [];

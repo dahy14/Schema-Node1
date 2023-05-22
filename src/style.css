@@ -1,0 +1,285 @@
+@import url("https://fonts.googleapis.com/css2?family=Prompt&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Prompt", sans-serif;
+  color: #fff;
+}
+
+.app {
+  width: 100vw;
+  height: 100vh;
+  background: url(../src/assets/pixbg.jpg);
+
+  background-position: 50% 40%;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  position: relative;
+}
+
+.container {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+
+  width: 96%;
+  height: 84%;
+
+  display: grid;
+  column-gap: 0.5em;
+  row-gap: 0.5em;
+  grid-template-columns: 1fr 1.6fr;
+  grid-template-rows: 26fr 10fr 54fr 6fr;
+  grid-template-areas:
+    "header header"
+    "avail prev"
+    "availability prev-week"
+    "buttons buttons";
+}
+
+.header,
+.avail-heading,
+.prev-week-heading,
+#availability,
+#prev-week {
+  background: linear-gradient(180deg, #00000020 0%, #00000024 100%);
+}
+
+.avail-heading {
+  grid-area: avail;
+}
+#availability {
+  grid-area: availability;
+}
+.prev-week-heading {
+  grid-area: prev;
+}
+
+#prev-week {
+  grid-area: prev-week;
+}
+
+.header {
+  grid-area: header;
+}
+
+.buttons {
+  grid-area: buttons;
+
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5em;
+  align-items: center;
+}
+
+.circle {
+  width: 1.25ch;
+  height: 1.25ch;
+  border-radius: 50%;
+  background: #fff;
+  transform: translate(-0.12em, 0.3em);
+}
+
+.circle.red {
+  background-color: #ff0000;
+}
+.circle.green {
+  background-color: #71e100;
+}
+
+#prev-week {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.week {
+  font-size: 20px;
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.week div {
+  display: flex;
+  gap: 0.175em;
+  justify-content: end;
+}
+
+.prev-week-data {
+  padding-left: 0.125em;
+}
+
+.prev-week-data:nth-child(1)::before {
+  content: "M";
+}
+
+.prev-week-data:nth-child(2)::before {
+  content: "T";
+}
+
+.prev-week-data:nth-child(3)::before {
+  content: "W";
+}
+.prev-week-data:nth-child(4)::before {
+  content: "Th";
+}
+.prev-week-data:nth-child(5)::before {
+  content: "F";
+}
+.prev-week-data:nth-child(6)::before {
+  content: "Sa";
+}
+.prev-week-data:nth-child(7)::before {
+  content: "S";
+}
+
+/* Add the necessary components css here */
+
+.avail-heading {
+  font-size: 20px;
+  text-align: center;
+  text-shadow: 0.05em 0.05em 0.1em black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.prev-week-heading {
+  font-size: 20px;
+  text-align: center;
+  text-shadow: 0.05em 0.05em 0.1em black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.save {
+  background-color: white;
+  color: #671b1b;
+  border: 1px solid white;
+  border-radius: 0.3125em;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);
+  height: 35px;
+  width: 110px;
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
+}
+
+.save:hover {
+  background-color: #671b1b;
+  border-color: #671b1b;
+  color: white;
+}
+
+.export {
+  background-color: transparent;
+  color: #671b1b;
+  border: 1px solid;
+  border-color: #671b1b;
+  border-radius: 0.3125em;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);
+  height: 35px;
+  width: 130px;
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
+}
+
+.export:hover {
+  background-color: white;
+  color: #671b1b;
+}
+
+.header {
+  padding: 2em;
+  display: flex;
+  justify-content: center;
+  gap: 25em;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 5px #00000065;
+  align-items: center;
+}
+
+.day {
+  display: flex;
+  flex-direction: column;
+}
+
+.day2 {
+  font-size: 90px;
+  line-height: 1;
+}
+
+.day3 {
+  font-size: 40px;
+  margin-left: 0.075em;
+}
+
+.time {
+  font-size: 90px;
+}
+
+#time {
+  position: relative;
+  top: 0.125em;
+}
+
+#am-pm {
+  font-size: 40px;
+}
+
+#availability {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+#availability span {
+  display: flex;
+  width: 50%;
+  justify-content: space-between;
+  text-shadow: 2px 2px 5px #00000065;
+  font-size: 20px;
+}
+
+.avail-btn {
+  color: white;
+  border: 1px solid white;
+  border-radius: 0.3125em;
+  width: 6.7em;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);
+  position: relative;
+  cursor: pointer;
+}
+
+.avail-btn.green {
+  background: linear-gradient(to bottom right, #71e10030 0%, #ffffff00 75%);
+}
+
+.avail-btn.red {
+  background: linear-gradient(to bottom right, #ff000030 0%, #ffffff00 75%);
+}
+
+.avail-btn p {
+  display: inline;
+  position: absolute;
+  top: 50%;
+  left: 35%;
+  transform: translate(-35%, -50%);
+}
+
+.avail-btn .circle {
+  display: inline;
+  position: absolute;
+  top: 50%;
+  left: 95%;
+  transform: translate(-95%, -50%);
+}

@@ -2,13 +2,13 @@
   [
     "Apr 3, 2023",
     "Apr 9, 2023",
-    "mon",
-    "tues",
-    "wed",
-    "th",
-    "fr",
-    "sat",
-    "sun"
+    "available",
+    "available",
+    "busy",
+    "busy",
+    "busy",
+    "busy",
+    "busy"
   ],
   [
     "Apr 10, 2023",
@@ -64,5 +64,16 @@
     "busy",
     "busy",
     "busy"
+  ],
+  [
+    "May 22, 2023",
+    "May 28, 2023",
+    "available",
+    "busy",
+    "busy",
+    "busy",
+    "busy",
+    "available",
+    "available"
   ]
 ]
